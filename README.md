@@ -2,29 +2,23 @@
 
 ### Usage
 
-1. Install app dependencies
+1. Install all microfrontends dependencies (host & remotes)
 
-   `npm install`
+   `npm run install-deps`
 
-2. Install host dependencies
+2. Run all microfrontends
 
-   `npm run install-host-deps`
+   `npm run sneakers-store`
 
-3. Install remotes dependencies
-
-   `npm run install-remotes-deps`
-
-4. Run all microfrontends at once (host & remotes)
-
-   `npm run microfrontend`
-
-5. Access to sneakers store
+3. Access to homepage microfrontend
 
    `http://localhost:5000/`
 
-| Microfrontend | Type   | Execution             | Link                   |
+### Architecture
+
+| Microfrontend | Type   | Alone execution       | Access link            |
 | ------------- | ------ | --------------------- | ---------------------- |
-| Homepage      | Host   | `npm run host`        | http://localhost:5000/ |
+| Homepage      | Host   | `npm run homepage`    | http://localhost:5000/ |
 | Search bar    | Remote | `npm run searchbar`   | http://localhost:5001/ |
 | Product list  | Remote | `npm run productlist` | http://localhost:5002/ |
 | Cart          | Remote | `npm run cart`        | http://localhost:5003/ |

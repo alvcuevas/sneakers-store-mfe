@@ -13,9 +13,9 @@
     "searchbar": "cd remotes && cd searchbar && npm start",
     "productlist": "cd remotes && cd productlist && npm start",
     "cart": "cd remotes && cd cart && npm start",
-    "host": "cd host && cd homepage && npm start",
+    "homepage": "cd host && cd homepage && npm start",
     "remotes": "concurrently \"npm run searchbar\" \"npm run productlist\" \"npm run cart\"",
-    "microfrontend": "concurrently \"npm run host\" \"npm run remotes\""
+    "sneakers-store": "concurrently \"npm run host\" \"npm run remotes\""
   },
   "keywords": [],
   "author": "Álvaro Cuevas",
