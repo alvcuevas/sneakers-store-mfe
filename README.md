@@ -14,7 +14,7 @@
 
    `http://localhost:5000/`
 
-### Architecture
+### Architecture preview
 
 | Microfrontend | Type   | Alone execution       | Access link            |
 | ------------- | ------ | --------------------- | ---------------------- |
