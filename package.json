@@ -1,0 +1,25 @@
+{
+  "name": "sneakers-store-mfe",
+  "version": "1.0.0",
+  "description": "Sneakers store using MFE architecture",
+  "main": "index.js",
+  "scripts": {
+    "install-host-deps": "cd host && cd homepage && pnpm install",
+    "install-searchbar-deps": "cd remotes && cd searchbar && pnpm install",
+    "install-productlist-deps": "cd remotes && cd productlist && pnpm install",
+    "install-cart-deps": "cd remotes && cd cart && pnpm install",
+    "install-remotes-deps": "concurrently \"pnpm install-searchbar-deps\" \"pnpm install-productlist-deps\" \"pnpm install-cart-deps\"",
+    "searchbar": "cd remotes && cd searchbar && pnpm start",
+    "productlist": "cd remotes && cd productlist && pnpm start",
+    "cart": "cd remotes && cd cart && pnpm start",
+    "host": "cd host && cd homepage && pnpm start",
+    "remotes": "concurrently \"pnpm run searchbar\" \"pnpm run productlist\" \"pnpm run cart\"",
+    "microfrontend": "concurrently \"pnpm run host\" \"pnpm run remotes\""
+  },
+  "keywords": [],
+  "author": "Álvaro Cuevas",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
