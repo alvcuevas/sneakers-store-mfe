@@ -13,7 +13,7 @@ specifiers:
   framer-motion: ^6.5.1
   react: ^18.2.0
   react-dom: ^18.2.0
-  react-icons: ^4.8.0
+  react-icons: ^3.11.0
   react-scripts: 5.0.1
   typescript: ^4.9.5
   zustand: ^4.3.4
@@ -29,7 +29,7 @@ dependencies:
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-icons: 4.8.0_react@18.2.0
+  react-icons: 3.11.0_react@18.2.0
   react-scripts: 5.0.1_j5ip3o3v6sktjzl5cxtjyfbuo4
   typescript: 4.9.5
   zustand: 4.3.4_react@18.2.0
@@ -8783,11 +8783,12 @@ packages:
       use-sidecar: 1.1.2_pmekkgnqduwlme35zpnqhenc34
     dev: false
 
-  /react-icons/4.8.0_react@18.2.0:
-    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
+  /react-icons/3.11.0_react@18.2.0:
+    resolution: {integrity: sha512-JRgiI/vdF6uyBgyZhVyYJUZAop95Sy4XDe/jmT3R/bKliFWpO/uZBwvSjWEdxwzec7SYbEPNPck0Kff2tUGM2Q==}
     peerDependencies:
       react: '*'
     dependencies:
+      camelcase: 5.3.1
       react: 18.2.0
     dev: false
 
