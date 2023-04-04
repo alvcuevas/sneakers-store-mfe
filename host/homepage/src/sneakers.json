@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "brand": "New Balance",
+    "model": "M1500 Sand",
+    "price": 150,
+    "color": "Brown",
+    "image": "https://images.stockx.com/360/New-Balance-1500-Sand/Images/New-Balance-1500-Sand/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1649243432&h=384&q=57"
+  },
+  {
+    "id": 2,
+    "brand": "Nike",
+    "model": "Air Force 1 Low '07",
+    "price": 90,
+    "color": "White",
+    "image": "https://images.stockx.com/360/Nike-Air-Force-1-Low-White-07/Images/Nike-Air-Force-1-Low-White-07/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1635275427&h=384&q=57"
+  },
+  {
+    "id": 3,
+    "brand": "Vans",
+    "model": "Old Skool Black",
+    "price": 89,
+    "color": "Black",
+    "image": "https://images.stockx.com/360/Vans-Old-Skool-Black-White/Images/Vans-Old-Skool-Black-White/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1635254461&h=384&q=57"
+  },
+  {
+    "id": 4,
+    "brand": "Nike",
+    "model": "Dunk Low Lottery Malachite",
+    "price": 185,
+    "color": "Green",
+    "image": "https://images.stockx.com/360/Nike-Dunk-Low-SE-Lottery/Images/Nike-Dunk-Low-SE-Lottery/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1662736872&h=384&q=57"
+  },
+  {
+    "id": 5,
+    "brand": "Nike",
+    "model": "Air Max 1 Premium Blueprint",
+    "price": 170,
+    "color": "Blue",
+    "image": "https://images.stockx.com/360/Nike-Air-Max-1-Premium-Blueprint/Images/Nike-Air-Max-1-Premium-Blueprint/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1648663732&h=384&q=57"
+  },
+  {
+    "id": 6,
+    "brand": "Adidas",
+    "model": "Gazelle Scarlet Cloud",
+    "price": 95,
+    "color": "Blue",
+    "image": "https://images.stockx.com/360/adidas-Gazelle-Scarlet-Cloud-White/Images/adidas-Gazelle-Scarlet-Cloud-White/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1666164234&h=384&q=57"
+  }
+]
