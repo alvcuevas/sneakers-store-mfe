@@ -1,16 +1,16 @@
-import { create } from "zustand"
-import sneakers from "./sneakers.json"
+import { create } from 'zustand'
+import sneakers from './sneakers.json'
 
 enum Filter {
-  Name = "Name",
-  Color = "Color",
-  Price = "Price",
+  Name = 'Name',
+  Color = 'Color',
+  Price = 'Price',
 }
 
 enum Price {
-  Cheaper = "Cheaper",
-  Medium = "Medium",
-  Expensive = "Expensive",
+  Cheaper = 'Cheaper',
+  Medium = 'Medium',
+  Expensive = 'Expensive',
 }
 
 export interface Sneaker {
@@ -46,9 +46,9 @@ const initialState: SneakerStoreState = {
   sneakers: [...sneakers],
   filteredSneakers: [],
   cart: [],
-  searchText: "",
-  price: "" as Price,
-  color: "",
+  searchText: '',
+  price: '' as Price,
+  color: '',
 }
 
 export const useSneakerStore = create<SneakerStoreState & SneakerStoreActions>(
@@ -72,13 +72,18 @@ export const useSneakerStore = create<SneakerStoreState & SneakerStoreActions>(
     addSneakerToCart: (sneaker: Sneaker) => {
       set((state) => ({ cart: [...state.cart, sneaker] }))
     },
-    removeSneakerFromCart: (sneaker: Sneaker) => {},
+    removeSneakerFromCart: (sneaker: Sneaker) => {
+      const { cart } = get()
+      set(() => ({
+        cart: [...cart.filter((s) => s.id !== sneaker.id)],
+      }))
+    },
     filterSneakersBy: (filter: Filter) => {
       const { searchText, sneakers, price, color } = get()
       let filteredSneakers
 
       if (filter === Filter.Name) {
-        const searchTextRegExp = new RegExp(searchText, "i")
+        const searchTextRegExp = new RegExp(searchText, 'i')
 
         filteredSneakers = sneakers.filter(
           (sneaker) =>
