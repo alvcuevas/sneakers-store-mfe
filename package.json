@@ -8,14 +8,14 @@
     "install-searchbar-deps": "cd remotes && cd searchbar && npm install",
     "install-productlist-deps": "cd remotes && cd productlist && npm install",
     "install-cart-deps": "cd remotes && cd cart && npm install",
-    "install-remotes-deps": "concurrently \"npm install-searchbar-deps\" \"npm install-productlist-deps\" \"npm install-cart-deps\"",
-    "install-deps": "npm install && concurrently \"npm install-host-deps\" \"npm install-remotes-deps\"",
+    "install-remotes-deps": "concurrently \"npm run install-searchbar-deps\" \"npm run install-productlist-deps\" \"npm run install-cart-deps\"",
+    "install-deps": "npm install && concurrently \"npm run install-host-deps\" \"npm run install-remotes-deps\"",
     "searchbar": "cd remotes && cd searchbar && npm start",
     "productlist": "cd remotes && cd productlist && npm start",
     "cart": "cd remotes && cd cart && npm start",
     "homepage": "cd host && cd homepage && npm start",
     "remotes": "concurrently \"npm run searchbar\" \"npm run productlist\" \"npm run cart\"",
-    "sneakers-store": "concurrently \"npm run host\" \"npm run remotes\""
+    "sneakers-store": "concurrently \"npm run homepage\" \"npm run remotes\""
   },
   "keywords": [],
   "author": "Álvaro Cuevas",
