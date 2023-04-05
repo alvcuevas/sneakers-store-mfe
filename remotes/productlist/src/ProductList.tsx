@@ -18,11 +18,9 @@ import {
   Badge,
 } from '@chakra-ui/react'
 import { useSneakerStore } from 'homepage/store'
-import { MdAddShoppingCart } from 'react-icons/md'
-import { FaRegHeart, FaHeart } from 'react-icons/fa'
+import { MdAddShoppingCart, MdCheck } from 'react-icons/md'
 
 export default function ProductList() {
-  const [likedSneakerId, setLikedSneakerId] = React.useState<number>(0)
   const { sneakers, filteredSneakers, addSneakerToCart, isSneakerOnCart } =
     useSneakerStore()
   const sneakersList = !!filteredSneakers.length ? filteredSneakers : sneakers
@@ -39,54 +37,46 @@ export default function ProductList() {
                 borderRadius='lg'
                 height={260}
               />
-              <Stack mt='6' spacing='2'>
+              <Stack mt='6' spacing='1'>
                 <Box
                   display='flex'
                   alignItems='center'
                   justifyContent='space-between'
                 >
-                  <Heading size='md'>{sneaker.brand}</Heading>
+                  <Heading size='sm'>{sneaker.brand}</Heading>
+                </Box>
+                <Box
+                  display='flex'
+                  alignItems='center'
+                  justifyContent='space-between'
+                >
+                  <Box>
+                    <Text fontSize='sm'>{sneaker.model}</Text>
+                    <Text colorScheme='teal' fontSize='sm'>
+                      {sneaker.price},00 €
+                    </Text>
+                  </Box>
                   <Button
                     variant='ghost'
                     sx={{
                       '&:hover': { background: 'transparent' },
+                      paddingBottom: '10px',
                     }}
-                    onClick={() => setLikedSneakerId(sneaker.id)}
+                    pointerEvents={isSneakerOnCart(sneaker) ? 'none' : 'auto'}
+                    onClick={() => addSneakerToCart(sneaker)}
                   >
                     <Icon
-                      as={likedSneakerId === sneaker.id ? FaRegHeart : FaHeart}
-                      w={5}
-                      h={5}
-                      color='red.500'
+                      as={
+                        isSneakerOnCart(sneaker) ? MdCheck : MdAddShoppingCart
+                      }
+                      w={8}
+                      h={8}
+                      color='teal'
                     />
                   </Button>
                 </Box>
-                <Text fontSize='lg'>{sneaker.model}</Text>
-                <Badge
-                  variant='outline'
-                  colorScheme='teal'
-                  width='90px'
-                  padding='6px'
-                  fontSize='lg'
-                  display='flex'
-                  justifyContent='center'
-                >
-                  {sneaker.price},00 €
-                </Badge>
               </Stack>
             </CardBody>
-            <Divider />
-            <CardFooter alignSelf='center' alignItems='center'>
-              <Button
-                variant='solid'
-                colorScheme={isSneakerOnCart(sneaker) ? 'gray' : 'teal'}
-                pointerEvents={isSneakerOnCart(sneaker) ? 'none' : 'auto'}
-                onClick={() => addSneakerToCart(sneaker)}
-                leftIcon={<MdAddShoppingCart />}
-              >
-                Add to cart
-              </Button>
-            </CardFooter>
           </Card>
         ))}
       </SimpleGrid>
