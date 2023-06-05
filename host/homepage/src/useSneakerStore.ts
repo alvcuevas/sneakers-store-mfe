@@ -79,13 +79,16 @@ export const useSneakerStore = create<SneakerStoreState & SneakerStoreActions>(
       }))
     },
     filterSneakersBy: (filter: Filter) => {
-      const { searchText, sneakers, price, color } = get()
-      let filteredSneakers
+      const { searchText, sneakers, price, color, filteredSneakers } = get()
+
+      const sneakersList = !!filteredSneakers.length
+        ? filteredSneakers
+        : sneakers
 
       if (filter === Filter.Name) {
         const searchTextRegExp = new RegExp(searchText, 'i')
 
-        filteredSneakers = sneakers.filter(
+        return sneakersList.filter(
           (sneaker) =>
             sneaker.brand.match(searchTextRegExp) ||
             sneaker.model.match(searchTextRegExp)
@@ -98,20 +101,28 @@ export const useSneakerStore = create<SneakerStoreState & SneakerStoreActions>(
           Expensive: { min: 150, max: 250 },
         }
 
-        filteredSneakers = sneakers.filter(
+        return sneakersList.filter(
           (sneaker) =>
             sneaker.price >= priceLimit[price].min &&
             sneaker.price <= priceLimit[price].max
         )
       }
       if (filter === Filter.Color) {
-        filteredSneakers = sneakers.filter((sneaker) => sneaker.color === color)
+        return sneakersList.filter((sneaker) => sneaker.color === color)
       }
 
-      return filteredSneakers || []
+      return []
     },
     isSneakerOnCart: (sneaker: Sneaker) => get().cart.includes(sneaker),
     cleanCart: () => set(() => ({ cart: [] })),
     cleanStore: () => set(initialState),
+    clearFilters: () => {
+      set(() => ({
+        searchText: '',
+        color: '',
+        price: '' as Price,
+        filteredSneakers: [],
+      }))
+    },
   })
 )
