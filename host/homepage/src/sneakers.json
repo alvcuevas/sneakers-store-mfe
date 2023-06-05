@@ -44,7 +44,55 @@
     "brand": "Adidas",
     "model": "Gazelle Scarlet Cloud",
     "price": 95,
-    "color": "Blue",
+    "color": "Red",
     "image": "https://images.stockx.com/360/adidas-Gazelle-Scarlet-Cloud-White/Images/adidas-Gazelle-Scarlet-Cloud-White/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1666164234&h=384&q=57"
+  },
+  {
+    "id": 7,
+    "brand": "Adidas",
+    "model": "Samba Chalky Brown Gum",
+    "price": 130,
+    "color": "Brown",
+    "image": "https://images.stockx.com/images/adidas-Samba-OG-Chalky-Brown-Gum-Product.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1683097261&q=57"
+  },
+  {
+    "id": 8,
+    "brand": "New Balance",
+    "model": "997 Red",
+    "price": 145,
+    "color": "Red",
+    "image": "https://images.stockx.com/images/New-Balance-997-Red.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1685174452&q=57"
+  },
+  {
+    "id": 9,
+    "brand": "Nike",
+    "model": "Dunk High Blue Chill",
+    "price": 110,
+    "color": "Blue",
+    "image": "https://images.stockx.com/images/Nike-Dunk-High-Blue-Chill-Product.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1670240383&q=57"
+  },
+  {
+    "id": 10,
+    "brand": "Reebok",
+    "model": "Club C 85 Army Green",
+    "price": 110,
+    "color": "Green",
+    "image": "https://images.stockx.com/images/Reebok-Club-C-85-Army-Green.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1652142755&q=57"
+  },
+  {
+    "id": 11,
+    "brand": "Reebok",
+    "model": "Club C 85 Chalk Cobalt Glen",
+    "price": 90,
+    "color": "White",
+    "image": "https://images.stockx.com/images/Reebok-Club-C-85-Chalk-Cobalt-Glen-Green-Logo.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1654652544&q=57"
+  },
+  {
+    "id": 12,
+    "brand": "Adidas",
+    "model": "Yeezy Boost 350 Pirate Black",
+    "price": 300,
+    "color": "Black",
+    "image": "https://images.stockx.com/images/adidas-Yeezy-Boost-350-Pirate-Black-2022-2023.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1682564684&q=57"
   }
 ]
