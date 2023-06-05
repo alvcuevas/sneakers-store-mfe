@@ -15,7 +15,17 @@ import { useSneakerStore } from 'homepage/store'
 import { SearchIcon } from '@chakra-ui/icons'
 
 export default function SearchBar() {
-  const { setSearchText, setPrice, setColor } = useSneakerStore()
+  const {
+    searchText,
+    setSearchText,
+    price,
+    setPrice,
+    color,
+    setColor,
+    clearFilters,
+  } = useSneakerStore()
+
+  const hasFiltersActive = !!price || !!color
 
   return (
     <ChakraProvider theme={theme}>
@@ -26,8 +36,9 @@ export default function SearchBar() {
         />
         <Input
           borderRadius={50}
-          placeholder='Find your favorite sneaker'
+          placeholder='Busca tu zapatilla favorita'
           _placeholder={{ opacity: 1, color: 'gray.500' }}
+          value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
       </InputGroup>
@@ -36,47 +47,72 @@ export default function SearchBar() {
         <Button
           variant='ghost'
           onClick={() => setColor('Brown')}
-          _hover={{ background: 'transparent' }}
+          background={color === 'Brown' ? 'teal.100' : ''}
+          _hover={{
+            background: color === 'Brown' ? 'teal.100' : 'transparent',
+          }}
         >
-          <Tag borderRadius='3xl' backgroundColor='brown'></Tag>
+          <Tag borderRadius='3xl' backgroundColor='orange.800'></Tag>
+        </Button>
+        <Button
+          variant='ghost'
+          onClick={() => setColor('Red')}
+          background={color === 'Red' ? 'teal.100' : ''}
+          _hover={{
+            background: color === 'Red' ? 'teal.100' : 'transparent',
+          }}
+        >
+          <Tag borderRadius='3xl' backgroundColor='red.500'></Tag>
         </Button>
         <Button
           variant='ghost'
           onClick={() => setColor('Blue')}
-          _hover={{ background: 'transparent' }}
+          background={color === 'Blue' ? 'teal.100' : ''}
+          _hover={{ background: color === 'Blue' ? 'teal.100' : 'transparent' }}
         >
           <Tag borderRadius='3xl' backgroundColor='blue.500'></Tag>
         </Button>
         <Button
           variant='ghost'
           onClick={() => setColor('Green')}
-          _hover={{ background: 'transparent' }}
+          background={color === 'Green' ? 'teal.100' : ''}
+          _hover={{
+            background: color === 'Green' ? 'teal.100' : 'transparent',
+          }}
         >
           <Tag borderRadius='3xl' backgroundColor='green.300'></Tag>
         </Button>
         <Button
           variant='ghost'
           onClick={() => setColor('White')}
-          _hover={{ background: 'transparent' }}
+          background={color === 'White' ? 'teal.100' : ''}
+          _hover={{
+            background: color === 'White' ? 'teal.100' : 'transparent',
+          }}
         >
           <Tag borderRadius='3xl' backgroundColor='gray.100'></Tag>
         </Button>
         <Button
           variant='ghost'
-          onClick={() => setColor('Gray')}
-          _hover={{ background: 'transparent' }}
+          onClick={() => setColor('Black')}
+          background={color === 'Black' ? 'teal.100' : ''}
+          _hover={{
+            background: color === 'Black' ? 'teal.100' : 'transparent',
+          }}
         >
-          <Tag borderRadius='3xl' backgroundColor='blackAlpha.400'></Tag>
+          <Tag borderRadius='3xl' backgroundColor='blackAlpha.900'></Tag>
         </Button>
       </Box>
       <Box display='flex' alignItems='center' gap='10' mt='5'>
-        <Text fontSize='md'>Price</Text>
+        <Text fontSize='md'>Precio</Text>
         <Box display='flex' gap='10'>
           <Box>
             <Button
               colorScheme='teal'
               variant='ghost'
+              background={price === 'Cheaper' ? 'teal.100' : ''}
               onClick={() => setPrice('Cheaper')}
+              _hover={{ background: price === 'Cheaper' ? 'teal.100' : '' }}
             >
               &#60; 100€
             </Button>
@@ -85,7 +121,9 @@ export default function SearchBar() {
             <Button
               colorScheme='teal'
               variant='ghost'
+              background={price === 'Medium' ? 'teal.100' : ''}
               onClick={() => setPrice('Medium')}
+              _hover={{ background: price === 'Medium' ? 'teal.100' : '' }}
             >
               100€ - 150€
             </Button>
@@ -94,11 +132,20 @@ export default function SearchBar() {
             <Button
               colorScheme='teal'
               variant='ghost'
+              background={price === 'Expensive' ? 'teal.100' : ''}
               onClick={() => setPrice('Expensive')}
+              _hover={{ background: price === 'Expensive' ? 'teal.100' : '' }}
             >
               150€ - 250€
             </Button>
           </Box>
+          {hasFiltersActive && (
+            <Box display='flex' alignItems='center' cursor='pointer'>
+              <Text colorScheme='teal' as='u' onClick={() => clearFilters()}>
+                limpiar filtros
+              </Text>
+            </Box>
+          )}
         </Box>
       </Box>
     </ChakraProvider>
