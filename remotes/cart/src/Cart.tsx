@@ -38,7 +38,7 @@ export default function Cart() {
       </Button>
       <Box
         sx={{
-          height: '100%',
+          height: '100vh',
           width: '425px',
           position: 'absolute',
           top: '0',
@@ -58,7 +58,7 @@ export default function Cart() {
             padding: '20px 30px',
           }}
         >
-          <Text fontSize='2xl'>Mi Carrito</Text>
+          <Text fontSize='2xl'>Carrito</Text>
           <IconButton
             aria-label='Close shopping cart'
             icon={<AiOutlineClose />}
@@ -140,11 +140,11 @@ export default function Cart() {
                 size='lg'
                 sx={{ textTransform: 'camelcase', marginTop: 6, width: '100%' }}
               >
-                Finalizar compra
+                Pago
               </Button>
             </Box>
           )}
-          {!cart.length && <p>No hay ningún producto añadido en tu carrito.</p>}
+          {!cart.length && <p>El carrito está vacío.</p>}
         </Box>
       </Box>
     </ChakraProvider>
